@@ -1,5 +1,5 @@
-<?xml version='1.0' encoding='ASCII'?>
 <package>
+
   <name>mara_moveit_config</name>
   <version>0.3.0</version>
   <description>
@@ -7,11 +7,15 @@
   </description>
   <author email="kyle24@mail.usf.edu">Kyle Ashley</author>
   <maintainer email="kyle24@mail.usf.edu">Kyle Ashley</maintainer>
+
   <license>BSD</license>
+
   <url type="website">http://moveit.ros.org/</url>
   <url type="bugtracker">https://github.com/ros-planning/moveit/issues</url>
   <url type="repository">https://github.com/ros-planning/moveit</url>
+
   <buildtool_depend>catkin</buildtool_depend>
+
   <run_depend>moveit_ros_move_group</run_depend>
   <run_depend>moveit_kinematics</run_depend>
   <run_depend>moveit_planners_ompl</run_depend>
@@ -21,17 +25,6 @@
   <run_depend>xacro</run_depend>
   <build_depend>mara</build_depend>
   <run_depend>mara</run_depend>
-  <build_depend>moveit_core</build_depend>
-  <build_depend>liblapack-dev</build_depend>
-  <build_depend>roscpp</build_depend>
-  <build_depend>tf_conversions</build_depend>
-  <build_depend>pluginlib</build_depend>
-  <run_depend>moveit_core</run_depend>
-  <run_depend>liblapack-dev</run_depend>
-  <run_depend>roscpp</run_depend>
-  <run_depend>tf_conversions</run_depend>
-  <run_depend>pluginlib</run_depend>
-  <export>
-    <moveit_core plugin="${prefix}/mara_left_arm_moveit_ikfast_plugin_description.xml"/>
-  </export>
+
+
 </package>

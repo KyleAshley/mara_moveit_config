@@ -19,7 +19,7 @@
   <!-- Get the joint state publisher topics -->
   <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
     <param name="/use_gui" value="false"/>
-    <rosparam param="/source_list">[/mara/left_arm/joint_positions]</rosparam>
+    <rosparam param="/source_list">[/mara/joint_positions]</rosparam>
   </node>
 
   <!-- Given the published joint states, publish tf for the robot links -->
