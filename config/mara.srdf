@@ -57,14 +57,36 @@
         <joint name="left_joint5" value="-1.57" />
         <joint name="left_joint6" value="0" />
     </group_state>
+    <group_state name="right_ready" group="right_arm">
+        <joint name="right_joint1" value="-3.1415" />
+        <joint name="right_joint2" value="-0.785" />
+        <joint name="right_joint3" value="-1.57" />
+        <joint name="right_joint4" value="0" />
+        <joint name="right_joint5" value="-1.57" />
+        <joint name="right_joint6" value="-0.785" />
+    </group_state>
+    <group_state name="left_ready" group="left_arm">
+        <joint name="left_joint1" value="0" />
+        <joint name="left_joint2" value="-2.355" />
+        <joint name="left_joint3" value="1.57" />
+        <joint name="left_joint4" value="0" />
+        <joint name="left_joint5" value="-1.57" />
+        <joint name="left_joint6" value="0.785" />
+    </group_state>
     <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
-    <end_effector name="right_end_effector" parent_link="right_link6" group="right_arm" parent_group="right_arm" />
-    <end_effector name="left_end_effector" parent_link="left_link6" group="left_arm" parent_group="left_arm" />
+    <end_effector name="right_end_effector" parent_link="right_link6" group="right_arm" />
+    <end_effector name="left_end_effector" parent_link="left_link6" group="left_arm" />
     <!--DISABLE COLLISIONS: By default it is assumed that any link of the robot could potentially come into collision with any other link in the robot. This tag disables collision checking between a specified pair of links. -->
+    <disable_collisions link1="base_link" link2="camera_base_link" reason="Adjacent" />
     <disable_collisions link1="base_link" link2="left_link1" reason="Adjacent" />
     <disable_collisions link1="base_link" link2="left_link2" reason="Never" />
     <disable_collisions link1="base_link" link2="right_link1" reason="Adjacent" />
     <disable_collisions link1="base_link" link2="right_link2" reason="Never" />
+    <disable_collisions link1="camera_base_link" link2="left_link2" reason="Default" />
+    <disable_collisions link1="camera_base_link" link2="left_link3" reason="Default" />
+    <disable_collisions link1="camera_base_link" link2="left_link4" reason="Default" />
+    <disable_collisions link1="camera_base_link" link2="right_link2" reason="Default" />
+    <disable_collisions link1="camera_base_link" link2="right_link3" reason="Default" />
     <disable_collisions link1="left_link1" link2="left_link2" reason="Adjacent" />
     <disable_collisions link1="left_link1" link2="left_link3" reason="Never" />
     <disable_collisions link1="left_link1" link2="left_link4" reason="Never" />

@@ -44,4 +44,9 @@
     <arg name="moveit_warehouse_database_path" value="$(arg db_path)"/>
   </include>
 
+  <node pkg="tf" type="static_transform_publisher" name="camera_link_broadcaster" args="0 0.08 1.18 -0.21 0.21 1 1 base_link camera_link 100" />
+
+  <include file="$(find openni_launch)/launch/openni.launch">
+  </include>
+
 </launch>
