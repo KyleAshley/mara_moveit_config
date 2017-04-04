@@ -15,3 +15,9 @@ controller_list:
       - right_joint4
       - right_joint5
       - right_joint6
+  - name: fake_left_end_effector_controller
+    joints:
+      - left_joint6
+  - name: fake_right_end_effector_controller
+    joints:
+      - right_joint6
