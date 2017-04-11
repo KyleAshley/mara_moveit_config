@@ -18,7 +18,7 @@
   <!--
   <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
     <param name="/use_gui" value="false"/>
-    <rosparam param="/source_list">[/mara/joint_positions]</rosparam>
+    <rosparam param="/source_list">[/mara/joint_states]</rosparam>
   </node> 
   -->
 
@@ -45,6 +45,7 @@
   </include>
 
   <node pkg="tf" type="static_transform_publisher" name="camera_link_broadcaster" args="0 0.08 1.18 -0.21 0.21 1 1 base_link camera_link 100" />
+  <node name="joint_state_combiner" pkg="mara" type="joint_state_combiner.py" output="screen" />
 
   <!--include file="$(find openni_launch)/launch/openni.launch"-->
   <!--/include-->

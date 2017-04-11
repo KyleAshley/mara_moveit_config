@@ -16,6 +16,7 @@
         <link name="left_link3" />
         <link name="left_link4" />
         <link name="left_link5" />
+        <link name="left_link6" />
         <joint name="left_joint1" />
         <joint name="left_joint2" />
         <joint name="left_joint3" />
@@ -30,6 +31,7 @@
         <link name="right_link3" />
         <link name="right_link4" />
         <link name="right_link5" />
+        <link name="right_link6" />
         <joint name="right_joint1" />
         <joint name="right_joint2" />
         <joint name="right_joint3" />

@@ -28,17 +28,17 @@
   <!-- Trajectory Execution Functionality -->
   <include ns="move_group" file="$(find mara_moveit_config)/launch/trajectory_execution.launch.xml" if="$(arg allow_trajectory_execution)">
     <arg name="moveit_manage_controllers" value="true" />
-    <arg name="moveit_controller_manager" value="mara" unless="$(arg fake_execution)"/>
-    <arg name="moveit_controller_manager" value="fake" if="$(arg fake_execution)"/>
+    <arg name="moveit_controller_manager" value="mara" />
   </include>
 
   <!-- Sensors Functionality -->
-  <include ns="move_group" file="$(find mara_moveit_config)/launch/sensor_manager.launch.xml" if="$(arg allow_trajectory_execution)">
+  <include file="$(find mara_moveit_config)/launch/sensor_manager.launch.xml" if="$(arg allow_trajectory_execution)">
     <arg name="moveit_sensor_manager" value="mara" />
   </include>
 
+
   <!-- Start the actual move_group node/action server -->
-  <node name="move_group" launch-prefix="$(arg launch_prefix)" pkg="moveit_ros_move_group" type="move_group" respawn="false" output="screen" args="$(arg command_args)">
+  <node name="move_group" launch-prefix="$(arg launch_prefix)" pkg="moveit_ros_move_group" type="move_group" respawn="false" output="screen" args="joint_states:=/mara/joint_states $(arg command_args)">
     <!-- Set the display variable, in case OpenGL code is used internally -->
     <env name="DISPLAY" value="$(optenv DISPLAY :0)" />
 
@@ -47,12 +47,16 @@
     <param name="jiggle_fraction" value="$(arg jiggle_fraction)" />
 
     <!-- load these non-default MoveGroup capabilities -->
-    <!--
-    <param name="capabilities" value="
-                  a_package/AwsomeMotionPlanningCapability
-                  another_package/GraspPlanningPipeline
-                  " />
-    -->
+    <param name="capabilities" value="move_group/MoveGroupCartesianPathService
+              move_group/MoveGroupExecuteService
+              move_group/MoveGroupKinematicsService
+              move_group/MoveGroupMoveAction
+              move_group/MoveGroupPickPlaceAction
+              move_group/MoveGroupPlanService
+              move_group/MoveGroupQueryPlannersService
+              move_group/MoveGroupStateValidationService
+              move_group/MoveGroupGetPlanningSceneService
+              " />
 
     <!-- inhibit these default MoveGroup capabilities -->
     <!--
@@ -68,5 +72,6 @@
     <param name="planning_scene_monitor/publish_state_updates" value="$(arg publish_monitored_planning_scene)" />
     <param name="planning_scene_monitor/publish_transforms_updates" value="$(arg publish_monitored_planning_scene)" />
   </node>
+  -->
 
 </launch>
